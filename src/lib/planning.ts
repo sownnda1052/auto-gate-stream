@@ -62,18 +62,6 @@ export function buildTimeline(arrival: string, cbm: number): Stage[] {
 }
 
 // Thuật toán đề xuất: sức chứa → khách hàng → loại hàng → cửa → xung đột lịch
-export function suggest(plan: Plan, plans: Plan[]): Suggestion[] {
-  const cbm = totalCbm(plan.lines);
-  const start = toMin(plan.arrival);
-  const tl = buildTimeline(plan.arrival, cbm);
-  const end = toMin(tl[tl.length - 1].time);
-
-  const results: Suggestion[] = [];
-  for (const w of plan.warehouseId ? [] : []) void w;
-  const { WAREHOUSES } = require("./data") as { WAREHOUSES: Warehouse[] };
-  void WAREHOUSES;
-  return results;
-}
 
 export function computeSuggestions(
   plan: Plan,
