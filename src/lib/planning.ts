@@ -4,7 +4,7 @@ export interface Stage {
   label: string;
   minutes: number;
   time: string;
-  note?: string;
+  note?: string | undefined;
 }
 
 export interface Suggestion {
@@ -18,7 +18,7 @@ export interface Suggestion {
 }
 
 export function toMin(hhmm: string): number {
-  const [h, m] = hhmm.split(":").map(Number);
+  const [h = 0, m = 0] = hhmm.split(":").map(Number);
   return h * 60 + m;
 }
 
