@@ -71,7 +71,7 @@ export function computeSuggestions(
   const cbm = Math.max(totalCbm(plan.lines), 1);
   const start = toMin(plan.arrival);
   const tl = buildTimeline(plan.arrival, cbm);
-  const end = toMin(tl[tl.length - 1].time);
+  const end = toMin(tl.at(-1)?.time ?? plan.arrival);
 
   const suggestions: Suggestion[] = warehouses.map((w) => {
     const freeCbm = w.capacity - w.used;
@@ -100,7 +100,7 @@ export function computeSuggestions(
     const score = checks.filter((c) => c.ok).length;
     return {
       warehouse: w,
-      gate: gate ?? w.gates[0],
+      gate: gate ?? w.gates[0] ?? 0,
       start: plan.arrival,
       end: toHHMM(end),
       checks,

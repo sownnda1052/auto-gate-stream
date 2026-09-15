@@ -46,8 +46,8 @@ function Index() {
   };
 
   const confirm = (i: number) => {
-    if (!suggestions) return;
-    const s = suggestions[i];
+    const s = suggestions?.[i];
+    if (!s) return;
     setConfirmed(i);
     setPlans((prev) => [
       ...prev,
