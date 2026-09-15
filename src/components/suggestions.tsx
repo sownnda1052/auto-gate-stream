@@ -27,19 +27,19 @@ export function Suggestions({ suggestions, confirmedIndex, onConfirm }: Props) {
             const confirmed = confirmedIndex === i;
             return (
               <li key={i} className={`rounded-xl p-3 ring-1 ${confirmed ? "glow-green bg-white/70 ring-emerald-500/30" : "bg-white/55 ring-black/5"}`}>
-                <div className="flex items-start justify-between">
-                  <div>
-                    <p className="text-sm font-semibold">
+                <div className="flex items-start justify-between gap-2">
+                  <div className="min-w-0">
+                    <p className="text-sm font-semibold leading-snug">
                       {s.warehouse.name} · Cửa {s.gate}
                       {s.recommended && !confirmed && (
-                        <span className="ml-2 rounded-md bg-accent/15 px-1.5 py-0.5 text-[10px] font-medium text-accent">Đề xuất</span>
+                        <span className="ml-2 inline-block rounded-md bg-accent/15 px-1.5 py-0.5 align-middle text-[10px] font-medium text-accent">Đề xuất</span>
                       )}
                     </p>
                     <p className="mt-0.5 text-[11px] text-ink/50">
                       {s.warehouse.address} · {s.start}–{s.end}
                     </p>
                   </div>
-                  <span className={`rounded-md px-2 py-0.5 text-[11px] font-medium ${s.score === s.checks.length ? "bg-emerald-500/15 text-emerald-700" : "bg-amber-500/15 text-amber-700"}`}>
+                  <span className={`shrink-0 rounded-md px-2 py-0.5 text-[11px] font-medium ${s.score === s.checks.length ? "bg-emerald-500/15 text-emerald-700" : "bg-amber-500/15 text-amber-700"}`}>
                     {s.score}/{s.checks.length} tiêu chí
                   </span>
                 </div>
