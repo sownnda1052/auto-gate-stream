@@ -18,8 +18,8 @@ export function DispatchPlan({ plans }: { plans: Plan[] }) {
         “Tờ giấy 41 cửa” cũ trở thành kết quả phân luồng tự động của hệ thống.
       </p>
 
-      <div className="mt-4 overflow-hidden rounded-xl ring-1 ring-black/10">
-        <table className="w-full text-left text-sm">
+      <div className="mt-4 overflow-x-auto rounded-xl ring-1 ring-black/10">
+        <table className="w-full min-w-[560px] text-left text-sm">
           <thead className="bg-white/50 text-[11px] uppercase tracking-wide text-ink/45">
             <tr>
               <th className="px-3 py-2 font-medium">Giờ</th>

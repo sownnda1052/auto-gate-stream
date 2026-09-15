@@ -24,7 +24,7 @@ export function PlanForm({ plan, onChange, onGenerate }: Props) {
         <span className="rounded-full bg-ink/5 px-2.5 py-0.5 text-[11px] font-medium text-ink/60">Input</span>
       </div>
 
-      <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
+      <div className="mt-4 grid grid-cols-1 gap-3 min-[420px]:grid-cols-2 sm:grid-cols-3">
         <label>
           <span className="text-[11px] font-medium text-ink/50">Mã container</span>
           <input className="field mt-1 font-mono" value={plan.containerNo}
@@ -68,8 +68,8 @@ export function PlanForm({ plan, onChange, onGenerate }: Props) {
             {plan.lines.length} dòng · {totalQty(plan.lines)} PCS · {totalCbm(plan.lines).toFixed(1)} CBM
           </span>
         </div>
-        <div className="overflow-hidden rounded-xl ring-1 ring-black/10">
-          <table className="w-full text-left text-sm">
+        <div className="overflow-x-auto rounded-xl ring-1 ring-black/10">
+          <table className="w-full min-w-[600px] text-left text-sm">
             <thead className="bg-white/50 text-[11px] uppercase tracking-wide text-ink/45">
               <tr>
                 <th className="px-3 py-2 font-medium">ItemID</th>
@@ -105,7 +105,7 @@ export function PlanForm({ plan, onChange, onGenerate }: Props) {
       </div>
 
       <button onClick={onGenerate}
-        className="mt-4 inline-flex items-center justify-center gap-2 rounded-lg bg-brand px-4 py-2.5 text-sm font-medium text-primary-foreground ring-1 ring-brand/30 transition hover:bg-brand/90">
+        className="mt-4 flex w-full items-center justify-center gap-2 rounded-lg bg-brand px-4 py-2.5 text-sm font-medium text-primary-foreground ring-1 ring-brand/30 transition hover:bg-brand/90 sm:w-auto">
         <span>Tạo đề xuất vị trí</span>
         <span aria-hidden className="text-primary-foreground/70">→</span>
       </button>
