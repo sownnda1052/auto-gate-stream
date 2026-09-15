@@ -65,7 +65,7 @@ function Index() {
       </div>
 
       <header className="sticky top-0 z-30 border-b border-white/40 bg-white/55 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-[1240px] items-center gap-8 px-6 py-3">
+        <div className="mx-auto flex max-w-[1240px] items-center gap-3 px-4 py-3 sm:gap-8 sm:px-6">
           <div className="flex items-center gap-3">
             <div className="grid size-9 place-items-center rounded-lg bg-brand text-primary-foreground ring-1 ring-black/5">
               <span className="font-mono text-sm font-medium">U&I</span>
@@ -83,7 +83,7 @@ function Index() {
         </div>
       </header>
 
-      <main className="mx-auto max-w-[1240px] px-6 py-8">
+      <main className="mx-auto max-w-[1240px] px-4 py-6 sm:px-6 sm:py-8">
         <div className="mb-5 flex flex-wrap items-end justify-between gap-4">
           <div>
             <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-accent">Bản demo báo cáo học thuật</p>
@@ -111,7 +111,7 @@ function Index() {
           <GateControl plans={plans} />
         </div>
 
-        <footer className="mt-8 flex items-center justify-between text-[11px] text-ink/40">
+        <footer className="mt-8 flex flex-col gap-1 text-[11px] text-ink/40 sm:flex-row sm:items-center sm:justify-between">
           <p>Hệ thống hỗ trợ lập kế hoạch và phân luồng xe — kho ngoại quan U&I · Dữ liệu mô phỏng</p>
           <p className="font-mono">KCN Nam Tân Uyên, Bình Dương</p>
         </footer>

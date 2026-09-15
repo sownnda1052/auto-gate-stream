@@ -32,16 +32,16 @@ export function GateControl({ plans }: { plans: Plan[] }) {
         Bảo vệ chỉ cần nhập số container và cửa xe đang đứng — không cần biết packing list hay thuật toán.
       </p>
 
-      <div className="mt-4 flex flex-wrap items-end gap-3">
-        <label className="min-w-56 flex-1">
+      <div className="mt-4 grid grid-cols-1 gap-3 sm:flex sm:flex-wrap sm:items-end">
+        <label className="min-w-0 flex-1 sm:min-w-56">
           <span className="text-[11px] font-medium text-ink/50">Số container</span>
           <input className="field mt-1 font-mono uppercase" value={container} onChange={(e) => setContainer(e.target.value)} placeholder="VD: SEGU 5038733" />
         </label>
-        <label className="w-32">
+        <label className="w-full sm:w-32">
           <span className="text-[11px] font-medium text-ink/50">Cửa xe đang đứng</span>
           <input className="field mt-1 font-mono" value={gate} onChange={(e) => setGate(e.target.value)} placeholder="12" />
         </label>
-        <button onClick={check} className="rounded-lg bg-brand px-5 py-2.5 text-sm font-medium text-primary-foreground transition hover:bg-brand/90">
+        <button onClick={check} className="w-full rounded-lg bg-brand px-5 py-3 text-sm font-medium text-primary-foreground transition hover:bg-brand/90 sm:w-auto sm:py-2.5">
           Kiểm tra
         </button>
       </div>
@@ -58,7 +58,7 @@ export function GateControl({ plans }: { plans: Plan[] }) {
                 <span className="size-3 rounded-full bg-emerald-500" />
                 <span className="text-xl font-bold tracking-tight text-emerald-700">CHO PHÉP VÀO</span>
               </div>
-              <div className="mt-3 grid grid-cols-3 gap-2 text-center">
+              <div className="mt-3 grid grid-cols-3 gap-1.5 text-center sm:gap-2">
                 <div className="rounded-lg bg-white/70 py-2">
                   <p className="text-[10px] uppercase tracking-wide text-ink/45">Cửa</p>
                   <p className="font-mono text-sm font-medium">{result.plan.gate}</p>
