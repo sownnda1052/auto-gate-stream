@@ -4,9 +4,12 @@ interface Props {
   suggestions: Suggestion[] | null;
   confirmedIndex: number | null;
   onConfirm: (i: number) => void;
+  departed?: boolean;
+  completed?: boolean;
 }
 
-export function Suggestions({ suggestions, confirmedIndex, onConfirm }: Props) {
+export function Suggestions({ suggestions, confirmedIndex, onConfirm, departed = false, completed = false }: Props) {
+  const lotLabel = completed ? "Đã hoàn tất lô hàng" : departed ? "Xe đã rời đi · đang sắp hàng" : "Đang xử lý tại cửa";
   return (
     <section className="panel rounded-2xl p-5 ring-1 ring-black/5">
       <div className="flex items-center justify-between">
@@ -53,7 +56,7 @@ export function Suggestions({ suggestions, confirmedIndex, onConfirm }: Props) {
                 <div className="mt-3 flex items-center justify-between">
                   <span className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-medium ${confirmed ? "bg-emerald-500/15 text-emerald-700" : "bg-white/70 text-ink/50"}`}>
                     <span className={`size-1.5 rounded-full ${confirmed ? "bg-emerald-500" : "bg-ink/30"}`} />
-                    {confirmed ? "Đã xác nhận" : "Chờ xác nhận"}
+                    {confirmed ? `Đã xác nhận · ${lotLabel}` : "Chờ xác nhận"}
                   </span>
                   {confirmed ? (
                     <span className="rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-medium text-primary-foreground">Đã gán</span>

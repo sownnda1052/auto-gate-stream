@@ -20,6 +20,7 @@ export interface Plan {
   gate?: number;
   windowEnd?: string;
   deviation?: string; // cảnh báo sai lệch kế hoạch vs thực tế
+  status?: string; // trạng thái lô hàng: đang xử lý / xe đã rời đi / đã hoàn tất
 }
 
 export interface Warehouse {
