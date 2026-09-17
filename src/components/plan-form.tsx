@@ -39,6 +39,11 @@ export function PlanForm({ plan, onChange, onGenerate }: Props) {
           </select>
         </label>
         <label>
+          <span className="text-[11px] font-medium text-ink/50">Ngày tiếp nhận</span>
+          <input type="date" className="field mt-1 font-mono" value={plan.date}
+            onChange={(e) => set({ date: e.target.value })} />
+        </label>
+        <label>
           <span className="text-[11px] font-medium text-ink/50">Giờ xe đến</span>
           <input type="time" className="field mt-1 font-mono" value={plan.arrival}
             onChange={(e) => set({ arrival: e.target.value })} />
