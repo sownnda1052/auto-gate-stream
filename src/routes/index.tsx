@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Plan, SAMPLE_LINES, SEED_PLANS, WAREHOUSES } from "@/lib/data";
+import { Plan, SAMPLE_LINES, SEED_PLANS, TODAY, WAREHOUSES } from "@/lib/data";
 import { buildTimeline, computeSuggestions, Stage, Suggestion, totalCbm } from "@/lib/planning";
 import { PlanForm } from "@/components/plan-form";
 import { Suggestions } from "@/components/suggestions";
@@ -30,6 +30,7 @@ const EMPTY_PLAN: Plan = {
   customer: "Customer A",
   cargoType: "Nội thất",
   direction: "nhap",
+  date: TODAY,
   arrival: "13:30",
   lines: SAMPLE_LINES,
 };
