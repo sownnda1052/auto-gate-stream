@@ -56,23 +56,26 @@ export const SAMPLE_LINES: PackingLine[] = [
   { itemId: "I3365-453", po: "10929T6", description: "Dresser", qty: 8, cbm: 6.98, gw: 776 },
 ];
 
+// Ngày hôm nay (YYYY-MM-DD) dùng làm mặc định cho kế hoạch
+export const TODAY = new Date().toISOString().slice(0, 10);
+
 // Các kế hoạch đã xác nhận (lấy từ tờ giấy 41 cửa trong tài liệu)
 export const SEED_PLANS: Plan[] = [
   {
     id: "p1", containerNo: "CSNU 8709142", customer: "Customer A", cargoType: "Nội thất",
-    direction: "nhap", arrival: "08:30", lines: [], warehouseId: "02", gate: 14, windowEnd: "10:15",
+    direction: "nhap", date: TODAY, arrival: "08:30", lines: [], warehouseId: "02", gate: 14, windowEnd: "10:15",
   },
   {
     id: "p2", containerNo: "SEGU 5038733", customer: "Ashley Furniture", cargoType: "Nội thất",
-    direction: "nhap", arrival: "09:00", lines: [], warehouseId: "02", gate: 12, windowEnd: "10:45",
+    direction: "nhap", date: TODAY, arrival: "09:00", lines: [], warehouseId: "02", gate: 12, windowEnd: "10:45",
     deviation: "Xe đến trễ 25 phút so với kế hoạch",
   },
   {
     id: "p3", containerNo: "HLBU 1710233", customer: "Customer A", cargoType: "Điện tử",
-    direction: "nhap", arrival: "09:00", lines: [], warehouseId: "02", gate: 1, windowEnd: "10:30",
+    direction: "nhap", date: TODAY, arrival: "09:00", lines: [], warehouseId: "02", gate: 1, windowEnd: "10:30",
   },
   {
     id: "p4", containerNo: "VIA 352", customer: "Vinamilk", cargoType: "Thực phẩm khô",
-    direction: "xuat", arrival: "10:30", lines: [], warehouseId: "03", gate: 24, windowEnd: "12:00",
+    direction: "xuat", date: TODAY, arrival: "10:30", lines: [], warehouseId: "03", gate: 24, windowEnd: "12:00",
   },
 ];
