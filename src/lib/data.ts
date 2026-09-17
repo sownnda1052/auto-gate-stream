@@ -14,6 +14,7 @@ export interface Plan {
   customer: string;
   cargoType: string;
   direction: "nhap" | "xuat";
+  date: string; // "YYYY-MM-DD" ngày tiếp nhận
   arrival: string; // "HH:mm"
   lines: PackingLine[];
   warehouseId?: string;
