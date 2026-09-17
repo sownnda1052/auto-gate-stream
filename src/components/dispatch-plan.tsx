@@ -49,7 +49,7 @@ export function DispatchPlan({ plans }: { plans: Plan[] }) {
                     </span>
                   ) : (
                     <span className="inline-flex items-center gap-1.5 text-[11px] text-emerald-700">
-                      <span className="size-1.5 rounded-full bg-emerald-500" />Đúng kế hoạch
+                      <span className="size-1.5 rounded-full bg-emerald-500" />{p.status ?? "Đúng kế hoạch"}
                     </span>
                   )}
                 </td>
