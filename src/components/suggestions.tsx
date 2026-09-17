@@ -56,7 +56,7 @@ export function Suggestions({ suggestions, confirmedIndex, onConfirm, departed =
                 <div className="mt-3 flex items-center justify-between">
                   <span className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-medium ${confirmed ? "bg-emerald-500/15 text-emerald-700" : "bg-white/70 text-ink/50"}`}>
                     <span className={`size-1.5 rounded-full ${confirmed ? "bg-emerald-500" : "bg-ink/30"}`} />
-                    {confirmed ? "Đã xác nhận" : "Chờ xác nhận"}
+                    {confirmed ? `Đã xác nhận · ${lotLabel}` : "Chờ xác nhận"}
                   </span>
                   {confirmed ? (
                     <span className="rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-medium text-primary-foreground">Đã gán</span>
