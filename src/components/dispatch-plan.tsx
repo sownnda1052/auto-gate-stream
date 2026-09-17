@@ -74,7 +74,15 @@ export function DispatchPlan({ plans }: { plans: Plan[] }) {
           <span className="grid size-6 place-items-center rounded-md bg-brand/10 font-mono text-[11px] font-medium text-brand">4</span>
           <h2 className="text-sm font-semibold">Kế hoạch phân luồng ngày hôm nay</h2>
         </div>
-        <span className="rounded-full bg-ink/5 px-2.5 py-0.5 text-[11px] font-medium text-ink/60">{sorted.length} xe</span>
+        <div className="flex items-center gap-2">
+          <span className="rounded-full bg-ink/5 px-2.5 py-0.5 text-[11px] font-medium text-ink/60">{sorted.length} xe</span>
+          <button
+            onClick={() => exportPdf(sorted)}
+            className="rounded-lg bg-brand px-3 py-1.5 text-[11px] font-medium text-primary-foreground ring-1 ring-brand/30 transition hover:bg-brand/90"
+          >
+            Xuất PDF / In
+          </button>
+        </div>
       </div>
       <p className="mt-1 text-[11px] text-ink/45">
         “Tờ giấy 41 cửa” cũ trở thành kết quả phân luồng tự động của hệ thống.
@@ -84,6 +92,7 @@ export function DispatchPlan({ plans }: { plans: Plan[] }) {
         <table className="w-full min-w-[560px] text-left text-sm">
           <thead className="bg-white/50 text-[11px] uppercase tracking-wide text-ink/45">
             <tr>
+              <th className="px-3 py-2 font-medium">Ngày</th>
               <th className="px-3 py-2 font-medium">Giờ</th>
               <th className="px-3 py-2 font-medium">Container</th>
               <th className="px-3 py-2 font-medium">Luồng</th>
@@ -95,6 +104,7 @@ export function DispatchPlan({ plans }: { plans: Plan[] }) {
           <tbody className="divide-y divide-black/5">
             {sorted.map((p) => (
               <tr key={p.id} className="bg-white/40">
+                <td className="px-3 py-2 font-mono text-xs">{fmtDate(p.date)}</td>
                 <td className="px-3 py-2 font-mono text-xs">{p.arrival}–{p.windowEnd}</td>
                 <td className="px-3 py-2 font-mono text-xs font-medium">{p.containerNo}</td>
                 <td className="px-3 py-2">
