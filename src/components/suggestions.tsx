@@ -4,9 +4,12 @@ interface Props {
   suggestions: Suggestion[] | null;
   confirmedIndex: number | null;
   onConfirm: (i: number) => void;
+  departed?: boolean;
+  completed?: boolean;
 }
 
-export function Suggestions({ suggestions, confirmedIndex, onConfirm }: Props) {
+export function Suggestions({ suggestions, confirmedIndex, onConfirm, departed = false, completed = false }: Props) {
+  const lotLabel = completed ? "Đã hoàn tất lô hàng" : departed ? "Xe đã rời đi · đang sắp hàng" : "Đang xử lý tại cửa";
   return (
     <section className="panel rounded-2xl p-5 ring-1 ring-black/5">
       <div className="flex items-center justify-between">
